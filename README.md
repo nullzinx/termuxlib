@@ -1,16 +1,32 @@
 # termuxlib 📱🐍
 
-[![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/platform-Android%20(Termux)-green.svg)](https://termux.dev/)
-[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/) [![Platform](https://img.shields.io/badge/platform-Android%20(Termux)-green.svg)](https://termux.dev/) [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 A lightweight, type-annotated Python wrapper around Termux API command‑line utilities on Android.
 
 `termuxlib` exposes native `termux-api` utilities as structured static Python classes, allowing you to control hardware, sensors, notifications, SMS, text-to-speech, camera, GPS, and Wi-Fi in few lines of code.
 
+--- 
+
+## Table of Contents 
+
+* [Prerequisites](#prerequisites) 
+* [Installation](#installation) 
+* [Core Concept](#core-concept) 
+* [Quick Start](#quick-start) 
+* [Features](#features) 
+* [API Reference](#api-reference) 
+* [Error Handling](#error-handling) 
+* [Examples](#examples) 
+* [Project Structure](#project-structure) 
+* [Tech Stack](#tech-stack) 
+* [License](#license) 
+* [Contributing](#contributing) 
+* [Footer](#footer)
+
 ---
 
-## Prerequisites
+## Prerequisites 
 
 Your Android environment must have Termux and its API package configured:
 
@@ -24,18 +40,17 @@ Your Android environment must have Termux and its API package configured:
 
 ---
 
-## Installation
+## Installation 
 
-To use `termuxlib` locally, clone this repository or copy the `termuxlib` directory into your project root. 
 
-You can also install the package in editable mode:
+You can  install the package using pip
 ```bash
-pip install -e .
+pip install termuxlib 
 ```
 
 ---
 
-## Core Concept
+## Core Concept 
 
 All wrappers are defined as `@staticmethod` functions inside organized modules. 
 
@@ -51,7 +66,7 @@ print(f"Battery level: {battery['percentage']}% ({battery['status']})")
 
 ---
 
-## Quick Start
+## Quick Start 
 
 ```python
 from termuxlib import send_notification, device, tts, clipboard
@@ -64,9 +79,24 @@ clipboard.copy("Hello from Python!")
 
 ---
 
-## API Reference
+## Features ✨
 
-### 1. Notifications
+*   **Notifications:** Send native Android notifications.
+*   **Device & Sensors:** Access hardware information (battery, GPS, sensors) and manage fingerprint authentication.
+*   **Text-to-Speech:** Synthesize spoken text using the Android TTS engine.
+*   **SMS Management:** Send SMS messages and access contact lists.
+*   **Telephony:** Retrieve network information and initiate calls.
+*   **Wi-Fi Control:** Get current Wi-Fi connection details and scan for networks.
+*   **Clipboard Access:** Copy text to and read from the system clipboard.
+*   **Camera & Flashlight:** Capture photos and control the device's torch.
+*   **Lightweight Design:** Minimalistic wrapper around Termux CLI utilities.
+*   **Type Hinting:** Enhanced code readability and maintainability with type annotations.
+
+---
+
+## API Reference 
+
+### 1. Notifications 
 
 #### `send_notification(title: str, content: str) -> None`
 Triggers a native Android notification.
@@ -77,7 +107,7 @@ send_notification("Title", "Body message")
 
 ---
 
-### 2. Device & Sensors (`device`)
+### 2. Device & Sensors (`device`) 
 
 Provides access to hardware information and physical sensors.
 
@@ -98,7 +128,7 @@ print(device.get_fingerprint())
 
 ---
 
-### 3. Text-to-Speech (`tts`)
+### 3. Text-to-Speech (`tts`) 
 
 Synthesizes spoken text using the Android TTS engine.
 
@@ -116,7 +146,7 @@ tts.speak("Action completed successfully.")
 
 ---
 
-### 4. SMS (`sms`)
+### 4. SMS (`sms`) 
 
 Manages text messages and contact databases.
 
@@ -134,7 +164,7 @@ sms.send("+1234567890", "Automated system update.")
 
 ---
 
-### 5. Telephony (`telephony`)
+### 5. Telephony (`telephony`) 
 
 Accesses cellular connection details and handles outbound calls.
 
@@ -152,7 +182,7 @@ telephony.makecall("+1234567890")
 
 ---
 
-### 6. Wi-Fi (`wifi`)
+### 6. Wi-Fi (`wifi`) 
 
 Monitors current network states and scans nearby networks.
 
@@ -169,7 +199,7 @@ print(wifi.info())
 
 ---
 
-### 7. Clipboard (`clipboard`)
+### 7. Clipboard (`clipboard`) 
 
 Manipulates the Android system clipboard.
 
@@ -187,7 +217,7 @@ print(clipboard.read_clipboard())
 
 ---
 
-### 8. Camera & Flashlight (`camera`)
+### 8. Camera & Flashlight (`camera`) 
 
 Manages photo capture and toggles the hardware torch.
 
@@ -207,7 +237,7 @@ camera.torch(False)
 
 ---
 
-## Error Handling
+## Error Handling 
 
 All standard execution errors from Termux calls propagate as standard `subprocess.CalledProcessError`.
 
@@ -223,7 +253,7 @@ except subprocess.CalledProcessError as e:
 
 ---
 
-## Examples
+## Examples 
 
 To view end-to-end operational automation scripts (such as a battery alert, SMS responder, or a GPS locator):
 
@@ -231,6 +261,51 @@ To view end-to-end operational automation scripts (such as a battery alert, SMS 
 
 ---
 
-## License
+## Project Structure 
+
+```
+termuxlib/
+├── src/termuxlib/
+│   ├── __init__.py
+│   └── main.py
+├── pyproject.toml
+├── README.md
+└── LICENSE
+```
+
+---
+
+## Tech Stack 
+
+*   **Language:** Python
+*   **Environment:** Android (Termux)
+*   **Build System:** Setuptools
+
+---
+
+## License 
 
 This project is licensed under the terms of the GNU General Public License v3.0 (GPL-3.0). See the LICENSE file for details.
+
+---
+
+## Contributing 
+
+Contributions are welcome! Please feel free to submit pull requests or open issues on the GitHub repository.
+
+---
+
+## Footer 
+
+© 2023 termuxlib. All rights reserved.
+
+*   Repository: [termuxlib](https://github.com/nullzinx/termuxlib)
+*   Author: nullzinx
+*   Contact: [nullzinx@example.com](mailto:nullzinx@example.com) (example email)
+
+**Give a 🌟 if you like this project!**
+
+
+
+---
+**<p align="center">Generated by [ReadmeCodeGen](https://www.readmecodegen.com/)</p>**

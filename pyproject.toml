@@ -22,5 +22,9 @@ dependencies = []
 [project.urls]
 Homepage = "https://github.com/nullzinx/termuxlib"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.setuptools]
-packages = ["termuxlib"]
+package-dir = {"" = "src"} 
+

@@ -837,38 +837,6 @@ The library also inherits limitations and restrictions imposed by Android and Te
 
 ---
 
-# Development Status
-
-The project is currently under active development.
-
-The API may change between versions.
-
-Breaking changes may occur before the first stable release.
-
-Until a stable version is released, applications using `termuxlib` should avoid assuming that the API is permanently stable.
-
----
-
-# Roadmap
-
-Potential future features include:
-
-- [ ] Better exception handling
-- [ ] Consistent return types
-- [ ] Type hints throughout the API
-- [ ] Automatic command availability checks
-- [ ] Custom exception classes
-- [ ] Improved documentation
-- [ ] More Termux:API commands
-- [ ] Async API
-- [ ] Better subprocess management
-- [ ] Unit tests
-- [ ] CI/CD
-- [ ] Stable PyPI releases
-- [ ] API versioning
-
----
-
 # Contributing
 
 Contributions are welcome.
@@ -900,7 +868,6 @@ git push origin feature/my-feature
 ```
 
 Then open a pull request.
-
 When contributing, prefer small, focused changes and test functionality directly on an Android device running Termux.
 
 ---

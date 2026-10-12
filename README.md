@@ -4,8 +4,6 @@ A Python library for interacting with Android devices through **Termux:API**.
 
 `termuxlib` provides a Python interface over Termux:API commands, allowing Python programs to access Android features such as notifications, battery information, GPS, sensors, text-to-speech, SMS, telephony, Wi-Fi, clipboard, camera, and flashlight control.
 
-> **Status:** Work in progress.
-
 ---
 
 ## Table of Contents
@@ -27,7 +25,6 @@ A Python library for interacting with Android devices through **Termux:API**.
 - [Dependencies](#dependencies)
 - [Examples](#examples)
 - [Limitations](#limitations)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
 
